@@ -1,6 +1,9 @@
 # イベント案内
 ## 「WLOラズパイ倶楽部　IFTTTで簡単クラウド連携」
 
+## イベント参加申し込み
+http://raspi170622.peatix.com
+
 ## 詳細
 WLOラズパイ倶楽部は、RaspberryPiやArduinoなどを使った 趣味の電子工作に興味ある有志の集まりです。 
 今回はクラウドサービスをIFTTT(イフト) https://ifttt.com/ を取り上げます。
