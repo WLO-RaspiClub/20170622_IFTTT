@@ -33,8 +33,8 @@
 ### IFTTTとRaspberry Piとの連携
  * Maker Webhooks https://ifttt.com/maker_webhooks
  * ConnectするとTriggersとActionsが設定
- * Trigger: Raspberry PiからHTTP GET/POSTすることでTriggerを起動できる
-     * IFTTTアカウントで1つだけKeyが割り当てられる。Keyを含むURLにアクセスすることでTriggerできる
+ * Triggers: Raspberry PiからHTTP GET/POSTすることでTriggersを起動できる
+     * IFTTTアカウントで1つだけKeyが割り当てられる。Keyを含むURLにアクセスすることでTriggers起動できる
      * HTTP POSTする場合は3つ引数を渡すことができる
          * 引数はAppletに渡され、条件判断や連携先サービスのActionで活用できる
  * Actions: IFTTTからhttp/httpsでアクセスしてくれる
