@@ -46,6 +46,7 @@
  * Glue(のり)になる代替サービスを用いてActionsを
      * たとえばGoogle Drive https://drive.google.com/ 
      * Raspberry PiからGoogle Driveにあるファイルの中身を定期的に取得できる
-     * 他のサービスのTriggersでGoogle Driveにファイルを書き込めば、間接的にRaspberry Piに情報を送り込める
+     * 他のサービスから、Google Drive サービス https://ifttt.com/google_drive をTriggerして、Google Driveにファイルを書き込む
+     * 間接的にRaspberry Piに情報を送り込める
    
   
