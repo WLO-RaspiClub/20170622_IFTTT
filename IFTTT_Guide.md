@@ -25,10 +25,11 @@
      * Zapier https://zapier.com/
      * Integromat https://www.integromat.com/en/
      * Pipes https://www.pipes.digital/
-     * FRED https://fred.sensetecnic.com/
-     * Microsoft Flow https://flow.microsoft.com/ja-jp/
+     * Microsoft Flow https://flow.microsoft.com/
      * MyThings https://mythings.yahoo.co.jp/
-     * Playground環境 
+     * Node-RED https://nodered.org/
+         * FRED https://fred.sensetecnic.com/
+         * Playground環境 
   
 ### IFTTTとRaspberry Piとの連携
  * Maker Webhooks https://ifttt.com/maker_webhooks
