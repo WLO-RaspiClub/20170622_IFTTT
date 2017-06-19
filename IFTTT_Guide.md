@@ -29,6 +29,7 @@
      * MyThings https://mythings.yahoo.co.jp/
      * Node-RED https://nodered.org/
          * FRED https://fred.sensetecnic.com/
+         * AT&T Flow Designer https://developer.att.com/campaigns/flow-designer-beta
          * Playground環境 
   
 ### IFTTTとRaspberry Piとの連携
@@ -49,5 +50,10 @@
      * Raspberry PiからGoogle Driveにあるファイルの中身を定期的に取得できる
      * 他のサービスから、Google Drive サービス https://ifttt.com/google_drive をTriggerして、Google Driveにファイルを書き込む
      * 間接的にRaspberry Piに情報を送り込める
-   
+
+### Raspberry PiにスイッチとLEDを接続
+ * GPIO (General Purpose Input/Output) 
+     * ![GPIO Pin](https://cdn.sparkfun.com/assets/learn_tutorials/4/2/4/header_pinout.jpg)
+     * Pin39/40 Pin33/34が、GNDと隣接しているので使いやすい
+ * 簡単につかうために WiringPi
   
