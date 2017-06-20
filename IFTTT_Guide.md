@@ -54,6 +54,11 @@
 ### Raspberry PiにスイッチとLEDを接続
  * GPIO (General Purpose Input/Output) 
      * ![GPIO Pin](https://cdn.sparkfun.com/assets/learn_tutorials/4/2/4/header_pinout.jpg)
-     * Pin39/40 Pin33/34が、GNDと隣接しているので使いやすい
- * 簡単につかうために WiringPi
+     * Pin29/30 Pin39/40 Pin33/34が、GNDと隣接しているので使いやすい
+ * 簡単につかうために WiringPiを用いる
+     * Raspbian JESSIEでは標準で導入
+     * gpio readall で現在のGPIOの状態表示。
+     * ![GPIO readall](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gpio_readall.png)
+ * 
+     
   
