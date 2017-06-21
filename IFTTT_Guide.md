@@ -45,6 +45,7 @@
      * Android https://play.google.com/store/apps/details?id=com.ifttt.ifttt&utm_source=/do_button&utm_medium=web
      * スマートフォンの機能（位置、カレンダー、住所、プッシュ通知）と連携
  * Pocket (Webページを後で読むためにブックマークするサービス)との連携例
+     * https://github.com/WLO-RaspiClub/20170622_IFTTT/blob/master/pocket.md
  * Google Driveとの連携例
      
 ### IFTTTとRaspberry Piとの連携
