@@ -31,7 +31,22 @@
          * FRED https://fred.sensetecnic.com/
          * AT&T Flow Designer https://developer.att.com/campaigns/flow-designer-beta
          * Playground環境 
-  
+         
+### IFTTTアカウント
+ * https://ifttt.com/join
+     * Googleアカウント、Facebookアカウント、e-mailによるログイン
+     * ![IFTTT signup](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/signup0.png)
+     * サービス連携でも使うのでGoogleアカウントでのサインアップがおすすめ
+ * 連携サービスのアカウント登録
+     * https://ifttt.com/search/services から連携したいサービスを選択
+     * 連携先のサービスにログインした状態でconnectする
+ * スマートフォンアプリ
+     * iOS https://itunes.apple.com/app/apple-store/id660944635?pt=1752682&ct=/do_button&mt=8
+     * Android https://play.google.com/store/apps/details?id=com.ifttt.ifttt&utm_source=/do_button&utm_medium=web
+     * スマートフォンの機能（位置、カレンダー、住所、プッシュ通知）と連携
+ * Pocket (Webページを後で読むためにブックマークするサービス)との連携例
+ * Google Driveとの連携例
+     
 ### IFTTTとRaspberry Piとの連携
  * Maker Webhooks https://ifttt.com/maker_webhooks
  * ConnectするとTriggersとActionsが設定
