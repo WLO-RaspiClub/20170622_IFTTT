@@ -57,8 +57,11 @@
      * Pin29/30 Pin39/40 Pin33/34が、GNDと隣接しているので使いやすい
  * 簡単につかうために WiringPiを用いる
      * Raspbian JESSIEでは標準で導入
-     * gpio readall で現在のGPIOの状態表示。
+     * ```gpio readall``` で現在のGPIOの状態表示。 ```watch -tn 1 gpio readall``` で１秒ごとに自動更新になるので確認に便利。
      * ![GPIO readall](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gpio_readall.png)
- * 
+     * ```gpio write [PIN] [1|0]``` で 書き込み。[PIN]はreadallの時のwPiの番号をつかう。
+         * Pin29/30にLEDをつけてる場合は ```gpio write 21 1``` で点灯、 ```gpio write 21 0```で消灯。
+     * ```gpio read [PIN]``` で現在の状態を読める。
+         * スイッチをGNDにつなげた場合、デフォルトはpull upなので1、押下時はGNDに落ちるので0となる。
      
   
