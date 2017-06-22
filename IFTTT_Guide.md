@@ -79,5 +79,26 @@
          * Pin29/30にLEDをつけてる場合は ```gpio write 21 1``` で点灯、 ```gpio write 21 0```で消灯。
      * ```gpio read [PIN]``` で現在の状態を読める。
          * スイッチをGNDにつなげた場合、デフォルトはpull upなので1、押下時はGNDに落ちるので0となる。
-     
+ 
+### スイッチでIFTTTのTriggers起動
+ * smart-button.pl https://github.com/obgm/smart-button
+     * インストール (スクリプト１つだけなので)
+         * ```wget https://raw.githubusercontent.com/obgm/smart-button/master/smart-button.py```
+         * ``` chmod +x smart-button.py```
+     * ためしてみる
+         * ``` ./smart-button.py -P 5 -t 2 -l 'echo button' ```
+         * sudoしてないので警告が表示されるが、piユーザなら動くはず
+         * ```-P 5``` はGPIOポートの指定。```gpio readall```のBCMの番号で指定
+             * Pin29/30にスイッチを接続した場合は```-P 5```
+         * ```-t 2``` は長押し時間指定(指定秒以上の押下で-lのコマンドが動く)
+             * -c にコマンド指定すると、長押し時間以下で動作させられる 
+     * IFTTTの認証鍵確認
+         * https://ifttt.com/maker_webhooks の右上の「Documentation」ボタンの先のページに記載あり
+         * ![Trigger](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/ifttt_maker_key.png)
+     * ボタン押下でトリガ起動
+         * ``` ./smart-button.py -P 5 -t 2 -l 'echo button;curl -X POST https://maker.ifttt.com/trigger/button/with/key/__Your__IFTTT__TRIGGER__KEY__ ;echo' ```
+             * ```__Your__IFTTT__TRIGGER__KEY__```のところにIFTTTの認証鍵を記載する
+             * ``` Congratulations! You've fired the button event ``` と表示されたらトリガ完了。
+             
+             
   
