@@ -85,6 +85,7 @@
      * インストール (スクリプト１つだけなので)
          * ```wget https://raw.githubusercontent.com/obgm/smart-button/master/smart-button.py```
          * ``` chmod +x smart-button.py```
+         * サービス化するとでRaspberry Pi起動時に自動起動させることもできる。詳細は https://github.com/obgm/smart-button#using-as-a-system-service 
      * ためしてみる
          * ``` ./smart-button.py -P 5 -t 2 -l 'echo button' ```
          * sudoしてないので警告が表示されるが、piユーザなら動くはず
@@ -97,8 +98,39 @@
          * ![Trigger](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/ifttt_maker_key.png)
      * ボタン押下でトリガ起動
          * ``` ./smart-button.py -P 5 -t 2 -l 'echo button;curl -X POST https://maker.ifttt.com/trigger/button/with/key/__Your__IFTTT__TRIGGER__KEY__ ;echo' ```
+             * ```button```にはIFTTTのMaker WebhooksでEvent Nameに指定する文字列を入れる（後述）
              * ```__Your__IFTTT__TRIGGER__KEY__```のところにIFTTTの認証鍵を記載する
              * ``` Congratulations! You've fired the button event ``` と表示されたらトリガ完了。
-             
+
+### IFTTTのTriggersでGoogle Driveのファイルを更新する
+ * Google Driveにログインした状態でIFTTTのアカウント連携
+     * IFTTTのsearch https://ifttt.com/search でGoogle Driveを指定
+     * Connect ボタン押下
+     * (Googleアカウント複数ある場合は)アカウント選択ダイアログで選択
+     * 連携内容表示されるので「許可」
+     * https://ifttt.com/google_drive の右上にSettingsが表示されたら完了
+ * Appletを作成
+     * My Applets https://ifttt.com/my_applets 右上の New Appletを押下
+     * if + this then thatの 「+ this」を押下
+     * Choose a service でMaker Webhooksを検索
+     * 「Recieve a web request」選択
+     * Event Nameにbuttonと入れてCreate Trigger
+         * smart-button.py の-lのcurlのURL内の「button」に相当
+     *  if + this then thatの 「+ that」を押下
+     * Choose action service で google driveを検索
+     * Append to a documentを選択
+     * Action内容設定
+         * 指定内容にはingredient(成分)が指定できる
+             * 中括弧で囲んで指定。 Add ingredientボタンで、指定したTriggerで使えるingredientのヒントが表示
+         * Document nameにはファイル名 (LED1.txtとか)
+         * Contentには追加する文字列(```{{OccurredAt}}```でTriggerのイベント日時)
+         * Drive folder pathにGoogle Driveのpath
+         * Create Actionボタン押下
+     * Review and finish で内容確認して、Finishボタン押下で完了
+
+### Google Driveのコンテンツ更新でLEDを点灯する
+ * (作成中)
+ * (間に合わないかも...)
+ 
              
   
