@@ -2,7 +2,7 @@
 ### Goal
  * IFTTTをつかえるようにする
  * Raspberry PiからIFTTTのAppletのTrigerを起動する
- * IFTTTのAppletのActionでRaspberry PiのLEDを点灯する (手順作成中、間に合わないかも)
+ * IFTTTのAppletのActionでRaspberry PiのLEDを点灯する
  
 ### IFTTTについて
  * さまざまなクラウドサービスを連携させて新しい機能をつくるサービス
@@ -46,7 +46,8 @@
      * スマートフォンの機能（位置、カレンダー、住所、プッシュ通知）と連携
  * Pocket (Webページを後で読むためにブックマークするサービス)との連携例
      * https://github.com/WLO-RaspiClub/20170622_IFTTT/blob/master/pocket.md
- * Google Driveとの連携例
+ * Google Driveとの連携例(後述)
+ * LINE Notify https://notify-bot.line.me/ja/ なども便利
      
 ### IFTTTとRaspberry Piとの連携
  * Maker Webhooks https://ifttt.com/maker_webhooks
