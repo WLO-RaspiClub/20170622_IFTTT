@@ -123,14 +123,41 @@
          * 指定内容にはingredient(成分)が指定できる
              * 中括弧で囲んで指定。 Add ingredientボタンで、指定したTriggerで使えるingredientのヒントが表示
          * Document nameにはファイル名 (LED1.txtとか)
-         * Contentには追加する文字列(```{{OccurredAt}}```でTriggerのイベント日時)
+         * Contentには追加する文字列(```When: {{OccurredAt}}```でTriggerのイベント日時)
          * Drive folder pathにGoogle Driveのpath
          * Create Actionボタン押下
      * Review and finish で内容確認して、Finishボタン押下で完了
 
 ### Google Driveのコンテンツ更新でLEDを点灯する
- * (作成中)
- * (間に合わないかも...)
+#### 方針
+ * Raspberry Piから定期的にGoogle Driveのファイルを取得する（ポーリング）
+     * IFTTTのGoogle Drive ServiceのActions「Append to a document」は、Google Docsのファイルを作成する。
+     * ファイルの「共有可能なリンクを取得」で共有して、Raspberry Piからcurl(コマンドラインhttpクライアント)でテキストとして取得
+     * Actions毎に行が増えるので、行数が偶数か奇数かでLEDの点灯/消灯を決める
+     
+#### 手順
+ * Google DriveのファイルIDを取得する
+     * ![GoogleDrive01](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gdrive01.png)
+     * ![GoogleDrive01](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gdrive02.png)
+     * URLをコピーして、id=以降の文字列を確認しておく。
+ * 以下のシェルスクリプトを作成(vi polling.sh)　
+     * GDRIVEID=の行に取得しておいたGoogle DriveのファイルIDを記載する
+ ```polling.sh
+ #!/bin/sh
+GDRIVEID="___googleDriveFileIDStrings___"
+GDRIVEURL="https://docs.google.com/document/u/1/export?format=txt&id=${GDRIVEID}"
+while true
+do
+  LINES=$(curl -s -L -o - ${GDRIVEURL} | wc -l)
+  ONOFF=$(( ${LINES} % 2))
+  echo -n ${ONOFF}
+  echo -n " "
+  gpio write 29 ${ONOFF}
+  sleep 5
+done
+```
+ * 実行すると、12秒周期(取得7秒+sleep5秒)程度でGoogle Driveにアクセスして、点灯/消灯する
+ 
  
              
   
