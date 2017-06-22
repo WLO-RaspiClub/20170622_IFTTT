@@ -138,7 +138,7 @@
 #### 手順
  * Google DriveのファイルIDを取得する
      * ![GoogleDrive01](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gdrive01.png)
-     * ![GoogleDrive01](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gdrive02.png)
+     * ![GoogleDrive02](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gdrive02.png)
      * URLをコピーして、id=以降の文字列を確認しておく。
  * 以下のシェルスクリプトを作成(vi polling.sh)　
      * GDRIVEID=の行に取得しておいたGoogle DriveのファイルIDを記載する
