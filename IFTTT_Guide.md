@@ -2,7 +2,7 @@
 ### Goal
  * IFTTTをつかえるようにする
  * Raspberry PiからIFTTTのAppletのTrigerを起動する
- * IFTTTのAppletのActionでRaspberry PiのLEDを点灯する
+ * IFTTTのAppletのActionでRaspberry PiのLEDを点灯する (手順作成中、間に合わないかも)
  
 ### IFTTTについて
  * さまざまなクラウドサービスを連携させて新しい機能をつくるサービス
