@@ -76,7 +76,12 @@
      * Raspbian JESSIEでは標準で導入
      * ```gpio readall``` で現在のGPIOの状態表示。 ```watch -tn 1 gpio readall``` で１秒ごとに自動更新になるので確認に便利。
      * ![GPIO readall](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gpio_readall.png)
-     * ```gpio write [PIN] [1|0]``` で 書き込み。[PIN]はreadallの時のwPiの番号をつかう。
+     * ```LED、スイッチをつけているGPIOピンのモードをoutに指定する必要あり。
+             gpio [-g] mode ピン番号 モード
+          Pin29/30にLEDをつけてる場合は
+             gpio write 21 out
+          してから下記をためす
+     * ```gpio write [PIN] [1|0]``` で 書き込み。[PIN]はreadallの時のwPiの番号をつかう。
          * Pin29/30にLEDをつけてる場合は ```gpio write 21 1``` で点灯、 ```gpio write 21 0```で消灯。
      * ```gpio read [PIN]``` で現在の状態を読める。
          * スイッチをGNDにつなげた場合、デフォルトはpull upなので1、押下時はGNDに落ちるので0となる。
@@ -102,6 +107,7 @@
              * ```button```にはIFTTTのMaker WebhooksでEvent Nameに指定する文字列を入れる（後述）
              * ```__Your__IFTTT__TRIGGER__KEY__```のところにIFTTTの認証鍵を記載する
              * ``` Congratulations! You've fired the button event ``` と表示されたらトリガ完了。
+             * ```sudoでないと動作しない？            
 
 ### IFTTTのTriggersでGoogle Driveのファイルを更新する
  * Google Driveにログインした状態でIFTTTのアカウント連携
