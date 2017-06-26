@@ -79,7 +79,7 @@
      
      * ```LED、スイッチをつけているGPIOピンのモードをoutに指定する必要あり。
              gpio [-g] mode ピン番号 モード
-          Pin29/30にLEDをつけてる場合は、 gpio write 21 out　してから下記をためす
+          Pin29/30にLEDをつけてる場合は、 gpio mode 21 out　してから下記をためす
           
      * ```gpio write [PIN] [1|0]``` で 書き込み。[PIN]はreadallの時のwPiの番号をつかう。
          * Pin29/30にLEDをつけてる場合は ```gpio write 21 1``` で点灯、 ```gpio write 21 0```で消灯。
