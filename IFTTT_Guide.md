@@ -166,6 +166,8 @@ do
   sleep 5
 done
 ```
+ *上記のシェルスクリプトの中に、curl -X POST https://maker.ifttt.com/trigger/button/with/key/__Your__IFTTT__TRIGGER__KEY__ が必要？
+
  * ターミナルで実行すると、12秒周期(取得7秒+sleep5秒)程度でGoogle Driveにアクセスして、点灯/消灯する
      * ```sh polling.sh```
      
