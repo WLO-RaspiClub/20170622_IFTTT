@@ -77,9 +77,9 @@
      * ```gpio readall``` で現在のGPIOの状態表示。 ```watch -tn 1 gpio readall``` で１秒ごとに自動更新になるので確認に便利。
      * ![GPIO readall](https://raw.githubusercontent.com/WLO-RaspiClub/20170622_IFTTT/master/img/gpio_readall.png)
      
-     * ```LED、スイッチをつけているGPIOピンのモードをoutに指定する必要あり。
-             gpio [-g] mode ピン番号 モード
-          Pin29/30にLEDをつけてる場合は、 gpio mode 21 out　してから下記をためす
+     * LED、スイッチをつけているGPIOピンのモードをoutに指定する必要あり。
+             ```gpio [-g] mode ピン番号 モード```
+          Pin29/30にLEDをつけてる場合は、 ```gpio mode 21 out```　してから下記をためす
           
      * ```gpio write [PIN] [1|0]``` で 書き込み。[PIN]はreadallの時のwPiの番号をつかう。
          * Pin29/30にLEDをつけてる場合は ```gpio write 21 1``` で点灯、 ```gpio write 21 0```で消灯。
